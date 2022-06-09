@@ -17,6 +17,9 @@
 						<li class="nav-item">
 							<router-link class="nav-link" to="/carrito">Carrito</router-link>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link text-danger" @click="cerrarSesion">Cerrar sesión</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -29,3 +32,18 @@
 	</div>
 
 </template>
+
+
+<script>
+export default {
+	methods: {
+		cerrarSesion(){
+			localStorage.clear()
+			location.reload
+		}
+	},
+	created(){
+		
+	}
+}
+</script>

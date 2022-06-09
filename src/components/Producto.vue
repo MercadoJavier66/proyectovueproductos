@@ -42,6 +42,7 @@ export default {
             required: true,
         },
     },
+    
 
     methods: {
         agregarAlCarrito() {
@@ -61,6 +62,9 @@ export default {
                 }
                 this.$store.state.productosDelCarrito.push(productoNuevoEnCarrito)
             }
+            // descontamos el stock del store ... PENDIENTE DE SABER SI ACTUALIZAMOS EN EL MOCKAPI
+            const productoAActualizar = this.$store.state.listaTotalProductos.find(p => p.id == this.id)
+            productoAActualizar.cantidad--
             
         },
     },
